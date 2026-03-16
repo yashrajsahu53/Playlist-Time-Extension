@@ -1,0 +1,19 @@
+{
+  "name": "Playlist Time Calculator",
+  "description": "Shows the total watch time for the current YouTube playlist.",
+  "version": "1.0",
+  "manifest_version": 3,
+  "permissions": ["activeTab", "tabs"],
+  "host_permissions": ["https://www.youtube.com/*"],
+  "action": {
+    "default_popup": "hello.html",
+    "default_title": "Playlist Time Calculator"
+  },
+  "content_scripts": [
+    {
+      "matches": ["https://www.youtube.com/*"],
+      "js": ["content.js"],
+      "run_at": "document_idle"
+    }
+  ]
+}
